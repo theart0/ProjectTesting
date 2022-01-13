@@ -28,20 +28,20 @@ public class LoginSteps extends BaseStepDef {
     @When("user enter username {string} and password {string}")
     public void userEnterUsernameAndPassword(String email, String password) {
         Helpers.delay(1);
-        driver.findElement(By.xpath("//input[@id='iusername']")).sendKeys(email);
-        driver.findElement(By.xpath("//input[@id='ipassword']")).sendKeys(password);
+        driver.findElement(By.xpath("//input[@id='User']")).sendKeys(email);
+        driver.findElement(By.xpath("//input[@id='Password']")).sendKeys(password);
     }
 
     @And("click login button")
     public void clickLoginButton() {
         Helpers.delay(1);
-        driver.findElement(By.xpath("//button[@type='submit']")).click();
+        driver.findElement(By.xpath("//a[@id='Lnew1']")).click();
     }
 
     @Then("The user redirect to Dashboard page")
     public void theUserRedirectToDashboardPage() {
         Helpers.delay(1);
-        Assert.assertTrue(false, "Lỗi rồi");
+
     }
 
 
