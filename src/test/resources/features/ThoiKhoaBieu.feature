@@ -7,5 +7,5 @@ Feature: Thoi Khoa Bieu
     Then the Thoi Khoa Bieu page is display
     And lam cai gi do
     Examples:
-      | url                             | username | password   |
-      | http://my.uda.edu.vn/sv/svlogin | 43564    | limapdayne |
+      | url                                  | username | password   |
+      | https://www.demoblaze.com/index.html | 43564    | limapdayne |
