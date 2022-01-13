@@ -6,5 +6,5 @@ Feature: Login Page
     And click login button
     Then The user redirect to Dashboard page
     Examples:
-      | url                                 | username | password |
-      | https://hrm.anhtester.com/erp/login | admin01  | 123456   |
+      | url                              | username | password   |
+      | https://my.uda.edu.vn/sv/svlogin | 43803    | 1232123Duc |
