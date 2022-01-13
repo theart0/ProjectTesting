@@ -28,19 +28,22 @@ public class LoginSteps extends BaseStepDef {
     @When("user enter username {string} and password {string}")
     public void userEnterUsernameAndPassword(String email, String password) {
         Helpers.delay(1);
-        driver.findElement(By.xpath("//input[@id='User']")).sendKeys(email);
-        driver.findElement(By.xpath("//input[@id='Password']")).sendKeys(password);
+        driver.findElement(By.xpath("//a[@id='login2']")).click();
+        driver.findElement(By.xpath("//input[@id='loginusername']")).sendKeys(email);
+        driver.findElement(By.xpath("//input[@id='loginpassword']")).sendKeys(password);
     }
 
     @And("click login button")
     public void clickLoginButton() {
         Helpers.delay(1);
-        driver.findElement(By.xpath("//a[@id='Lnew1']")).click();
+        driver.findElement(By.xpath("//button[normalize-space()='Log in']")).click();
     }
 
     @Then("The user redirect to Dashboard page")
     public void theUserRedirectToDashboardPage() {
-        Helpers.delay(1);
+        Helpers.delay(2);
+        String tieude = driver.findElement(By.xpath("//a[@id='nameofuser']")).getText();
+        Assert.assertEquals(tieude, "Welcome 1", "Không đăng nhập được");
 
     }
 
