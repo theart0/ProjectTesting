@@ -1,12 +1,11 @@
 package stepdefinitions;
-
-import cucumber.TestContext;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import cucumber.TestContext;
 
 import utils.helpers.Helpers;
 
@@ -39,11 +38,11 @@ public class LoginSteps extends BaseStepDef {
         driver.findElement(By.xpath("//button[normalize-space()='Log in']")).click();
     }
 
-    @Then("The user redirect to Dashboard page")
-    public void theUserRedirectToDashboardPage() {
+    @Then("The user redirect to homepage")
+    public void theUserRedirectTohomepage(String username) {
         Helpers.delay(2);
-        String tieude = driver.findElement(By.xpath("//a[@id='nameofuser']")).getText();
-        Assert.assertEquals(tieude, "Welcome 1", "Không đăng nhập được");
+        String welcome = driver.findElement(By.xpath("//a[@id='nameofuser']")).getText();
+        Assert.assertEquals(welcome, "Welcome {string}", "Không đăng nhập được");
 
     }
 
