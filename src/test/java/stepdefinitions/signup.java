@@ -57,7 +57,7 @@ public class signup  extends  BaseStepDef{
         driver.findElement(By.xpath("//input[@placeholder='Nhập lại mật khẩu']")).sendKeys(cfpassword);
 
         // sửa nút click cho nó ăn nghe m
-        
+
         driver.findElement(By.className("sub_register")).click();
         driver.findElement(By.className("sub_register")).click();
         driver.findElement(By.className("sub_register")).click();
