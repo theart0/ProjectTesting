@@ -1,8 +1,9 @@
 Feature: login with no data
 
-  Scenario Outline:  user login with no data user and password
+  Scenario Outline:  user login with no data username and password
     Given user navigate to "<url>"
-    When user click button login
+    When user click icon login and click  button login
+    And user click button login with no data
     Then a notice login fail appear
     Examples:
       | url                    |
