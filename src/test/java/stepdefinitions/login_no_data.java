@@ -27,21 +27,27 @@ public class login_no_data extends  BaseStepDef {
         System.out.println("Driver on Steps class: " + driver);
         driver.get(url);
         Helpers.delay(1);
+        driver.findElement(By.xpath("//i[@class='fas fa-user']")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'Đăng nhập')]")).click();
+        Helpers.delay(2);
     }
 
-    @When("user click button login and click login")
+    @When("user click button login")
     public void userclickbuttonlogin() {
         Helpers.delay(1);
-        driver.findElement(By.xpath("//a[@id='login2']")).click();
-        driver.findElement(By.xpath("//button[normalize-space()='Log in']")).click();
+
+        driver.findElement(By.xpath("//a[contains(text(),'Đăng nhập')]")).click();
+
     }
     
 
     @Then("a notice login fail appear")
     public void aNoticeLoginFailAppear() {
-        Helpers.delay(3);
-        String thongbao =  driver.switchTo().alert().getText();
-        Assert.assertEquals(thongbao,"Please fill out Username and Password.","Login Succesful");
+        Helpers.delay(1);
+        driver.findElement(By.xpath("//div[@class='text-danger']")).isDisplayed();
+        Assert.assertTrue(true,"Foul, please check!!");
+
+
     }
 }
 

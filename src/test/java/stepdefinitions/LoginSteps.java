@@ -18,31 +18,24 @@ public class LoginSteps extends BaseStepDef {
         testContext = context;
     }
 
-    @Given("user navigate to url {string}")
-    public void userNavigateToUrl(String url) {
-        System.out.println("Driver on Steps class: " + driver);
-        driver.get(url);
-    }
-
     @When("user enter username {string} and password {string}")
     public void userEnterUsernameAndPassword(String email, String password) {
         Helpers.delay(1);
-        driver.findElement(By.xpath("//a[@id='login2']")).click();
-        driver.findElement(By.xpath("//input[@id='loginusername']")).sendKeys(email);
-        driver.findElement(By.xpath("//input[@id='loginpassword']")).sendKeys(password);
+        driver.findElement(By.xpath("//input[@name='log_email']")).sendKeys(email);
+        driver.findElement(By.xpath("//input[@name='log_password']")).sendKeys(password);
     }
 
     @And("click login button")
     public void clickLoginButton() {
         Helpers.delay(1);
-        driver.findElement(By.xpath("//button[normalize-space()='Log in']")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'Đăng nhập')]")).click();
     }
 
     @Then("The user redirect to homepage")
-    public void theUserRedirectTohomepage(String username) {
+    public void theUserRedirectTohomepage() {
         Helpers.delay(2);
-        String welcome = driver.findElement(By.xpath("//a[@id='nameofuser']")).getText();
-        Assert.assertEquals(welcome, "Welcome {string}", "Không đăng nhập được");
+        String title = driver.getTitle();
+        Assert.assertEquals(title,"home","Foul,please check!!");
 
     }
 
