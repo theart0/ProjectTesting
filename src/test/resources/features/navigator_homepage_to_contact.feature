@@ -1,8 +1,9 @@
 Feature: From homepage navigate to contact
+
   Scenario Outline: user can go to contact page when login complete
-    Given user login at "<url>" with "<username>" and "<password>"
+    Given user login at "<url>" with username "<username>" and password "<password>"
     When  user click on Contact
     Then Contact window appear
     Examples:
-      | url                                  | username | password |
-      | https://www.demoblaze.com/index.html | 1        | 1        |
+      | url                    | username        | password |
+      | http://127.0.0.1:8000/ | user1@gmail.com | 1        |

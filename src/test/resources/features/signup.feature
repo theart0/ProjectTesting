@@ -1,10 +1,10 @@
 Feature: Sign up
+
   Scenario Outline: Sign up new account
     Given user navigate to homepage "<url>"
-    And   click sign up button
-    When user new enter username "<username>" and password "<password>"
-    And   click button  signup
+    And   click icon sign in and clcik button sign up
+    When user new enter name "<name>" and email "<email>" and phone "<phone>" and address "<address>" and password "<password>" and confirmpassword"<cfpassword>"
     Then a noitice sign up succesfull appear
     Examples:
-      | url                                  | username   | password |
-      | https://www.demoblaze.com/index.html | dongatest4 | 1        |
+      | url                    | name  | email           | phone      | address | password | cfpassword |
+      | http://127.0.0.1:8000/ | admin | admin@gmail.com | 0776763650 | abc     | 1        | 1          |
