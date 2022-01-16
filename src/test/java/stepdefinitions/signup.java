@@ -55,7 +55,7 @@ public class signup  extends  BaseStepDef{
         driver.findElement(By.xpath("//input[@class='reg_password']")).sendKeys(password);
         Helpers.delay(1);
         driver.findElement(By.xpath("//input[@placeholder='Nhập lại mật khẩu']")).sendKeys(cfpassword);
-        driver.findElement(By.xpath("//button[contains(text(),'Tạo!')]")).click();
+        driver.findElement(By.name("dk")).click();
 
     }
 
