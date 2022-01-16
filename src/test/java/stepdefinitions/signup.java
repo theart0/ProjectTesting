@@ -30,7 +30,7 @@ public class signup  extends  BaseStepDef{
         System.out.println("Drive on Steps class" + driver);
         driver.get(url);
     }
-    @And("click icon sign in and clcik button sign up")
+    @And("click icon sign in and click button sign up")
     public void clickIconSignInAndClcikButtonSignUp() {
 
         Helpers.delay(1);
@@ -55,19 +55,15 @@ public class signup  extends  BaseStepDef{
         driver.findElement(By.xpath("//input[@class='reg_password']")).sendKeys(password);
         Helpers.delay(1);
         driver.findElement(By.xpath("//input[@placeholder='Nhập lại mật khẩu']")).sendKeys(cfpassword);
+        driver.findElement(By.xpath("//button[contains(text(),'Tạo!')]")).click();
 
-        // sửa nút click cho nó ăn nghe m
-
-        driver.findElement(By.className("sub_register")).click();
-        driver.findElement(By.className("sub_register")).click();
-        driver.findElement(By.className("sub_register")).click();
     }
 
 
     @Then("a noitice sign up succesfull appear")
     public void aNoiticeSignUpSuccesfullAppear() {
         String thongbao = driver.findElement(By.xpath("//div[@class='message_pass']")).getText();
-        Assert.assertEquals(thongbao,"Đăng ký thành công !", "lỗi rồi");
+        Assert.assertEquals(thongbao,"Đăng ký thành công !", "Foul, please check!!!");
     }
 
 

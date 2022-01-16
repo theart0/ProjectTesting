@@ -16,25 +16,36 @@ public class signup_with_alreadyaccount extends  BaseStepDef{
         super(context);
         testContext = context;
     }
-    @Given("user navigato to {string} and click on sign up button")
-    public void userNavigatoToAndClickOnSignUpButton(String url) {
+    @Given("user navigato to {string} and go to login page")
+    public void userNavigatoToAndGoToLoginPage(String url) {
         System.out.println("Driver on Steps class: " + driver);
         driver.get(url);
-        driver.findElement(By.xpath("//a[@id='signin2']")).click();
+        driver.findElement(By.xpath("//nav[@class='navbar']//ul//li//a[@href='#']")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'Đăng nhập')]")).click();
+        driver.findElement(By.xpath("//button[@id='signUp']")).click();
+        Helpers.delay(2);
+
     }
 
-    @When("enter exist username {string} and password {string}")
-    public void enterExistUsernameAndPassword(String username, String password) {
+    @When("enter exist name {string} email {string} phone {string} address {string} password {string} and confim password {string}")
+    public void enterExistUsernameNameEmailPhoneAddressPasswordAndConfimPassword(String name, String email, String phone, String address, String password, String cfpassword) {
+        driver.findElement(By.xpath("//input[@placeholder='Tên']")).sendKeys(name);
+        driver.findElement(By.xpath("//input[@class='reg_email']")).sendKeys(email);
+        driver.findElement(By.xpath("//input[@placeholder='Số điện thoại']")).sendKeys(phone);
+        driver.findElement(By.xpath("//input[@placeholder='Địa chỉ']")).sendKeys(address);
+        driver.findElement(By.xpath("//input[@class='reg_password']")).sendKeys(password);
+        driver.findElement(By.xpath("//input[@placeholder='Nhập lại mật khẩu']")).sendKeys(cfpassword);
+        driver.findElement(By.xpath("//button[contains(text(),'Tạo!')]")).click();
         Helpers.delay(1);
-        driver.findElement(By.xpath("//input[@id='sign-username']")).sendKeys(username);
-        driver.findElement(By.xpath("//input[@id='sign-password']")).sendKeys(password);
-        driver.findElement(By.xpath("//button[normalize-space()='Sign up']")).click();
     }
 
     @Then("sign up fail")
     public void signUpFail() {
         Helpers.delay(2);
-        String note = driver.switchTo().alert().getText();
-        Assert.assertEquals(note,"This user already exist.");
+        String note = driver.findElement(By.xpath("//div[@class='message_pass']")).getText();
+        Assert.assertEquals(note,"Email đã được sử dụng !","Foul,please check!!!");
     }
+
+
+
 }
