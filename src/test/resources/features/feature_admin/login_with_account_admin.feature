@@ -8,4 +8,4 @@ Feature: login with account admin
     Then login seccessful with acccount admin and navigator to admin page
     Examples:
       | url                    | usename         | password |
-      | http://127.0.0.1:8000/ | admin@gmail.com | 1       |
+      | http://127.0.0.1:8000/ | admin@gmail.com | 1        |
