@@ -6,5 +6,5 @@ Feature: Login Page
     And click login button
     Then The user redirect to homepage
     Examples:
-      | url                    | username      | password |
-      | http://127.0.0.1:8000/ | dat@gmail.com | 1        |
+      | url                    | username    | password |
+      | http://127.0.0.1:8000/ | 2@gmail.com | 2        |
