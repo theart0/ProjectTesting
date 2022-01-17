@@ -5,5 +5,5 @@ Feature: From homepage navigate to contact
     When  user click on Contact
     Then Contact window appear
     Examples:
-      | url                    | username        | password |
-      | http://127.0.0.1:8000/ | user1@gmail.com | 1        |
+      | url                    | username    | password |
+      | http://127.0.0.1:8000/ | 2@gmail.com | 2        |

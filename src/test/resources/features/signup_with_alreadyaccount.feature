@@ -6,4 +6,4 @@ Feature: sign up with already exist account
     Then  sign up fail
     Examples:
       | url                   | name | email       | phone | address | password | cfpassword |
-      | http://127.0.0.1:8000 | 1   | 1@gmail.com | 1    | 1      | 1     | 1         |
+      | http://127.0.0.1:8000 | 2    | 2@gmail.com | 2     | 2       | 2        | 2          |

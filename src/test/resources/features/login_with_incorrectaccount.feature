@@ -7,4 +7,4 @@ Feature: login with incorectaccount
     Then user fail login and show appear
     Examples:
       | url                    | username    | password |
-      | http://127.0.0.1:8000/ | 1@gmail.com | 1        |
+      | http://127.0.0.1:8000/ | 2@gmail.com | 2        |
