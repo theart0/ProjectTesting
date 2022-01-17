@@ -34,7 +34,7 @@ public class insert_data_QLVD extends  BaseStepDef{
         driver.findElement(By.xpath("//button[normalize-space()='Thêm Video']")).click();
     }
 
-    @Then("admin insert data seccesfull VD")
+    @Then("admin edit data seccesfull VD")
     public void adminInsertDataSeccesfullKH() {
         String checktext = driver.findElement(By.xpath("//h1[contains(text(),'Danh sách các Video của khóa học PHP')]")).getText();
         Assert.assertEquals(checktext,"Danh sách các Video của khóa học PHP", "it's not QLKH page");

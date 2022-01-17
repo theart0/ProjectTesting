@@ -30,6 +30,7 @@ public class login_with_acc_admin extends BaseStepDef {
 
         Helpers.delay(1);
         driver.findElement(By.xpath("//i[@class='fas fa-user']")).click();
+        Helpers.delay(1);
         driver.findElement(By.xpath("//a[contains(text(),'Đăng nhập')]")).click();
     }
     @And("click login button login")
