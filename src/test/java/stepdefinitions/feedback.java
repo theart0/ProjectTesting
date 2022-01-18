@@ -8,6 +8,8 @@ import io.cucumber.java.en.When;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import utils.helpers.Helpers;
+
 public class feedback extends  BaseStepDef{
     TestContext testContext;
 
@@ -17,10 +19,12 @@ public class feedback extends  BaseStepDef{
     }
     @When("enter name {string} phone {string} email {string} content {string}")
     public void enterNamePhoneEmailContent(String name, String phone, String email, String content) {
+        Helpers.delay(1);
         driver.findElement(By.xpath("//input[@placeholder='Họ và tên']")).sendKeys(name);
         driver.findElement(By.xpath("//input[@placeholder='Số điện thoại']")).sendKeys(phone);
         driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys(email);
         driver.findElement(By.xpath("//textarea[@placeholder='Bạn muốn nhắn nhủ e-learning điều gì']")).sendKeys(content);
+        Helpers.delay(1);
         driver.findElement(By.xpath("//button[contains(text(),'Gửi thôi nào!')]")).click();
     }
 

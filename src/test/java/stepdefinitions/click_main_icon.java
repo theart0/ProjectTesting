@@ -18,11 +18,13 @@ public class click_main_icon extends  BaseStepDef{
     }
     @When("click on main icon")
     public void clickOnMainIcon() {
+        Helpers.delay(2);
         driver.findElement(By.className("logo")).click();
     }
 
     @Then("navigate to homepage")
     public void navigateToHomepage() {
+        Helpers.delay(1);
         String url = driver.getCurrentUrl();
         Assert.assertEquals(url,"http://127.0.0.1:8000/","Foul, please check!!!");
     }

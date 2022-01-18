@@ -7,4 +7,4 @@ Feature: Sign up
     Then a noitice sign up succesfull appear
     Examples:
       | url                    | name  | email           | phone      | address | password | cfpassword |
-      | http://127.0.0.1:8000/ | admin | admin@gmail.com | 0776763650 | abc     | 1        | 1          |
+      | http://127.0.0.1:8000/ | 3 | 3@gmail.com | 0776763650 | abc     | 1        | 1          |

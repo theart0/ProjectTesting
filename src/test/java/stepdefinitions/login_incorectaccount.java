@@ -18,18 +18,6 @@ public class login_incorectaccount  extends  BaseStepDef{
         super(context);
         testContext = context;
     }
-    @Given("user navigator to url {string}")
-    public void userNavigatorToUrl(String url) {
-        System.out.println("Driver on Steps class: " + driver);
-        driver.get(url);
-    }
-
-    @When("User click icon login and click button đăng nhập")
-    public void userClickIconLoginAndClickButtonĐăngNhập() {
-            Helpers.delay(1);
-            driver.findElement(By.xpath("//i[@class='fas fa-user']")).click();
-        driver.findElement(By.xpath("//a[contains(text(),'Đăng nhập')]")).click();
-    }
 
     @And("user input username {string} and password{string} and click button đăng nhập")
     public void userInputUsernameAndPasswordAndClickButtonĐăngNhập(String username, String password) {

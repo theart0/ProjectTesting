@@ -18,8 +18,10 @@ public class LoginSteps extends BaseStepDef {
         testContext = context;
     }
 
-    @When("user enter username {string} and password {string}")
+    @When("user click on login button enter username {string} and password {string}")
     public void userEnterUsernameAndPassword(String email, String password) {
+        driver.findElement(By.xpath("//i[@class='fas fa-user']")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'Đăng nhập')]")).click();
         Helpers.delay(1);
         driver.findElement(By.xpath("//input[@name='log_email']")).sendKeys(email);
         driver.findElement(By.xpath("//input[@name='log_password']")).sendKeys(password);
@@ -38,6 +40,4 @@ public class LoginSteps extends BaseStepDef {
         Assert.assertEquals(title,"home","Foul,please check!!");
 
     }
-
-
 }

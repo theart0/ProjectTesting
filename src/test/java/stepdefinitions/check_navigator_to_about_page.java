@@ -30,7 +30,7 @@ public class check_navigator_to_about_page extends  BaseStepDef{
     @Then("about homepage is display")
     public void aboutHomepageIsDisplay() {
         Helpers.delay(1);
-        String checktitle = driver.findElement(By.name("title")).getText();
-        Assert.assertEquals(checktitle, "VỀ I-SHARE", "Foul, Please Check");
+        String checktitle = driver.findElement(By.xpath("//p[contains(text(),'VỀ I-SHARE')]")).getText();
+        Assert.assertEquals(checktitle, "Trang Chủ >> VỀ I-SHARE", "Foul, Please Check");
     }
 }

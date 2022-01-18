@@ -21,12 +21,13 @@ public class test_footer_homepage extends BaseStepDef {
 
     @When("click on Trang chu button at footer")
     public void clickOnTrangChuButtonAtFooter() {
-        driver.findElement(By.xpath("//a[normalize-space()='']")).click();
+        driver.findElement(By.name("home")).click();
         Helpers.delay(1);
     }
 
     @Then("homepage appear")
     public void homepageAppear() {
+        Helpers.delay(1);
         String title = driver.getTitle();
         Assert.assertEquals(title,"home","Foul, please check!!");
     }

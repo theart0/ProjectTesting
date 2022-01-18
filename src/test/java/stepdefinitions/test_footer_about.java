@@ -24,13 +24,13 @@ public class test_footer_about extends BaseStepDef{
 
     @When("click on About button")
     public void clickOnAboutButton() {
-    driver.findElement(By.xpath("//a[normalize-space()='']")).click();
+    driver.findElement(By.name("about")).click();
     }
 
     @Then("aboutpage appear")
     public void aboutpageAppear() {
-        boolean staus = driver.findElement(By.name("title")).isDisplayed();
-        Assert.assertTrue(true,"Foul, please check!!");
+        String title = driver.findElement(By.xpath("//p[contains(text(),'VỀ I-SHARE')]")).getText();
+        Assert.assertEquals(title,"Trang Chủ >> VỀ I-SHARE","Foul, please check!!");
 
     }
 }
